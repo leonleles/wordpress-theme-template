@@ -1,0 +1,12 @@
+{
+  "name": "root/project",
+  "config": {
+    "optimize-autoloader": true
+  },
+  "authors": [
+    {
+      "name": "Leonardo Leles",
+      "email": "leoleles9159@hotmail.com"
+    }
+  ]
+}

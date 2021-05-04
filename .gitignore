@@ -1,0 +1,12 @@
+.idea
+
+public/plugins/akismet
+public/plugins/hello.php
+
+public/themes/twentynineteen
+public/themes/twentytwenty
+public/themes/twentytwentyone
+
+public/themes/wordpress-template/bundle
+public/themes/wordpress-template/node_modules
+public/themes/wordpress-template/vendor
