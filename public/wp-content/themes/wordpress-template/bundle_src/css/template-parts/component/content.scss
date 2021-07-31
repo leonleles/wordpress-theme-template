@@ -1,0 +1,15 @@
+.template-part-component-content {
+  width: 100%;
+  color: var(--color-secondary);
+
+  * {
+    margin-bottom: 25px;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+}

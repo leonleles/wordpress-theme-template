@@ -1,0 +1,32 @@
+.template-part-component-socials-network {
+  display: flex;
+  align-items: center;
+
+  a {
+    display: flex;
+
+    + a {
+      margin-left: 15px;
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+
+      &.facebook {
+        width: 23px;
+        height: 23px !important;
+      }
+
+      &.twitter {
+        width: 38px;
+        height: 38px;
+      }
+
+      &.linkedin {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
