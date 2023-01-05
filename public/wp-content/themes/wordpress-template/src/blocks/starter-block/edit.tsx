@@ -33,7 +33,7 @@ export default function Edit() {
 	const [text, setText] = useState()
 	return (
 		<p { ...useBlockProps() }>
-			<input type="text" onChange={(e) => setText(e.target.value)}/>
+			<input type="text" onChange={(e: any) => setText(e.target.value)}/>
 			<span>{text}</span>
 		</p>
 	);
