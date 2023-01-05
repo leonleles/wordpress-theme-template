@@ -5,7 +5,6 @@ module.exports = {
     ...defaultConfig,
     entry: {
         ...defaultConfig.entry(),
-        theme: path.resolve(process.cwd(), 'src', 'theme'),
         public: path.resolve(process.cwd(), 'src', 'public')
     },
     module: {

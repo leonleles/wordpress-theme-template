@@ -28,7 +28,7 @@ function bp_get_page_directory() {
 }
 
 function bp_get_blocks_directory() {
-    return get_template_directory() . '/build/blocks/';
+    return get_template_directory() . '/build/admin/blocks/';
 }
 
 function get_page_by_template($template = '') {
