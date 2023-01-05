@@ -3,7 +3,6 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
-import {useState} from '@wordpress/element'
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -12,7 +11,7 @@ import {useState} from '@wordpress/element'
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import {InspectorControls, useBlockProps} from '@wordpress/block-editor';
-import {ColorPicker, PanelBody, PanelRow} from '@wordpress/components';
+import {ColorPicker, PanelBody, PanelRow, TextControl} from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -44,6 +43,11 @@ export default function Edit({attributes, setAttributes}: BlockEditProps<any>) {
                            initialOpen={false}>
                     <PanelRow>
                         <ColorPicker color={attributes.color} onChangeComplete={handleColor}/>
+                    </PanelRow>
+                    <PanelRow>
+                        <TextControl value={attributes.text} onChange={(value) => {
+                            setAttributes({color: value})
+                        }}/>
                     </PanelRow>
                 </PanelBody>
             </InspectorControls>

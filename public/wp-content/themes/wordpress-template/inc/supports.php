@@ -40,9 +40,6 @@ add_action('after_setup_theme', function () {
     register_nav_menus( array(
         'primary_menu' => __( 'Menu Principal' ),
         'footer_menu'  => __( 'Menu de Rodapé' ),
-        'solutions_menu'  => __( 'Soluções' ),
-        'segmentos_menu'  => __( 'Segmentos' ),
-        'main_actions_menu'  => __( 'Principais Ações' )
     ) );
 
 });

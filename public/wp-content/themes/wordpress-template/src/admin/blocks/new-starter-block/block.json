@@ -24,6 +24,23 @@
     "color": {
       "type": "string",
       "default": "blue"
+    },
+    "images": {
+      "type": "array",
+      "source": "query",
+      "selector": "img",
+      "query": {
+        "url": {
+          "type": "string",
+          "source": "attribute",
+          "attribute": "src"
+        },
+        "alt": {
+          "type": "string",
+          "source": "attribute",
+          "attribute": "alt"
+        }
+      }
     }
   },
   "textdomain": "new-starter-block",
