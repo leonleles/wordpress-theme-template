@@ -11,7 +11,8 @@ import {useState} from '@wordpress/element'
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import {InspectorControls, useBlockProps} from '@wordpress/block-editor';
+import {ColorPicker, PanelBody, PanelRow} from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -21,6 +22,7 @@ import { useBlockProps } from '@wordpress/block-editor';
  */
 import './editor.scss';
 
+// @ts-ignore
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -29,11 +31,24 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
-	const [text, setText] = useState()
-	return (
-		<p { ...useBlockProps() }>
-			olá mundo
-		</p>
-	);
+export default function Edit({attributes, setAttributes}) {
+    function handleColor(value: any) {
+        setAttributes({color: value.hex})
+    }
+
+    return (
+        <>
+            <InspectorControls>
+                <PanelBody title="Configurações"
+                           initialOpen={false}>
+                    <PanelRow>
+                        <ColorPicker color={attributes.color} onChangeComplete={handleColor}/>
+                    </PanelRow>
+                </PanelBody>
+            </InspectorControls>
+            <p {...useBlockProps()} style={{border: `1px solid ${attributes.color}`}}>
+                olá mundo
+            </p>
+        </>
+    );
 }
