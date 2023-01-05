@@ -3,14 +3,14 @@
 function panels_vars($panels) {
 
     $panels = array(
-        'general_infomation' => array(
-            'title' => __('Informações gerais'),
-            'priority' => 10
-        ),
-        'home_page' => array(
-            'title' => __('Página inicial'),
-            'priority' => 10
-        )
+//        'general_infomation' => array(
+//            'title' => __('Informações gerais'),
+//            'priority' => 10
+//        ),
+//        'home_page' => array(
+//            'title' => __('Página inicial'),
+//            'priority' => 10
+//        )
     );
 
     return $panels;
