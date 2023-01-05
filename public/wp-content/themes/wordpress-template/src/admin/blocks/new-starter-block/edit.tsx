@@ -21,6 +21,7 @@ import {ColorPicker, PanelBody, PanelRow} from '@wordpress/components';
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './editor.scss';
+import {BlockEditProps} from "@wordpress/blocks";
 
 // @ts-ignore
 /**
@@ -31,7 +32,7 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit({attributes, setAttributes}) {
+export default function Edit({attributes, setAttributes}: BlockEditProps<any>) {
     function handleColor(value: any) {
         setAttributes({color: value.hex})
     }
