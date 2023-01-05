@@ -19,6 +19,7 @@
     "@wordpress/element": "^5.1.0",
     "axios": "^0.21.1",
     "jquery": "^3.6.0",
+    "react-router-dom": "^6.6.1",
     "sweetalert2": "^10.16.7"
   }
 }
