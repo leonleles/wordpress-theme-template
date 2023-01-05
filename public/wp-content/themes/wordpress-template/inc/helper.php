@@ -27,6 +27,10 @@ function bp_get_page_directory() {
     return 'singular-pages/page/';
 }
 
+function bp_get_blocks_directory() {
+    return get_template_directory() . '/build/blocks/';
+}
+
 function get_page_by_template($template = '') {
     $args = array(
         'meta_key' => '_wp_page_template',
