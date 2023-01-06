@@ -1,1 +1,1 @@
-import './slider'
+export { default as Slider } from './slider'

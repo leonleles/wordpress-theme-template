@@ -1,17 +1,17 @@
-import {onReady} from "../../helpers/on-ready";
-import {BrowserRouter} from "react-router-dom";
-import {Slider} from "./slider";
-import {render} from "@wordpress/element";
+import './styles.scss'
+import {useState} from "@wordpress/element";
 
-onReady(() => {
-    const root = document.getElementById('wp-block-create-block-new-starter-block');
+const Slider = ({color}: any) => {
+    const [count, setCount] = useState(0)
 
-    if (root) {
-        render(
-            <BrowserRouter basename={'/'}>
-                <Slider/>
-            </BrowserRouter>,
-            root
-        );
-    }
-})
+    return (
+        <div style={{border: `1px solid ${color}`}}>
+            <h1>Contador: {count}</h1>
+            <button onClick={() => setCount(count + 1)}>+</button>
+        </div>
+    )
+}
+
+Slider.DOMClass = 'wp-block-create-block-new-starter-block'
+
+export default Slider;

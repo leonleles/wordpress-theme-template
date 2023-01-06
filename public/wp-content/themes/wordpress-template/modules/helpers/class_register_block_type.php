@@ -16,7 +16,10 @@ abstract class class_register_block_type
 
     public function _render_block($attributes, $content, $block)
     {
-        if (empty($content)) return "<div id='wp-block-create-block-$this->name'></div>";
+        if (empty($content)) {
+            $atthtml = bp_parse_array($attributes);
+            return "<div class='wp-block-create-block-$this->name' $atthtml></div>";
+        }
 
         return $content;
     }
