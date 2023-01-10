@@ -17,12 +17,5 @@ import {CustomComponent} from "../../../components";
  * @return {WPElement} Element to render.
  */
 export default function save() {
-    return (
-        <>
-            <CustomComponent/>
-            <p {...useBlockProps.save()}>
-                {'Starter Block – hello from the saved content!'}
-            </p>
-        </>
-    );
+    return null;
 }

@@ -3,7 +3,7 @@
     "outDir": "./build",
     "jsx": "react-jsx",
     "module": "ESNext",
-    "target": "ES5",
+    "target": "ES6",
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",

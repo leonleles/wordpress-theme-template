@@ -1,33 +1,27 @@
 import {onReady} from "./helpers/on-ready";
-import {BrowserRouter} from "react-router-dom";
-import {render} from "@wordpress/element";
 
 import * as blocks from "./blocks"
-onReady(() => {
+import {multipleRender} from "./helpers/render";
+import {render} from "@wordpress/element";
+import {BrowserRouter} from "react-router-dom";
 
+onReady(() => {
     Object.keys(blocks).map((name, idx) => {
         // @ts-ignore
-        const Element = blocks[name]
-        const {DOMClass = null} = Element;
+        const Component = blocks[name]
+        const {DOMClass = null, DOMId = [null]} = Component;
 
         if (DOMClass) {
             const elements = document.getElementsByClassName(DOMClass);
-
-            Object.keys(elements).map((__, i) => {
-                const root: HTMLElement = elements[i] as HTMLElement
-                const data = root?.dataset
-
-                const props = data ? data : {}
-
-                if (root) {
-                    render(
-                        <BrowserRouter basename={'/'}>
-                            <Element {...props}/>
-                        </BrowserRouter>,
-                        root
-                    );
-                }
-            })
+            multipleRender(elements, Component)
+        } else if (DOMId) {
+            const root = document.getElementById(DOMId);
+            render(
+                <BrowserRouter basename={'/'}>
+                    <Component/>
+                </BrowserRouter>,
+                root
+            );
         }
     })
 })

@@ -1,13 +1,11 @@
-import './styles.scss'
-import {useState} from "@wordpress/element";
-
+import {useState} from "@wordpress/element"
 const Slider = ({color}: any) => {
-    const [count, setCount] = useState(0)
+    const [state, setState] = useState(0)
 
     return (
         <div style={{border: `1px solid ${color}`}}>
-            <h1>Contador: {count}</h1>
-            <button onClick={() => setCount(count + 1)}>+</button>
+            <h1>Contador: {state}</h1>
+            <button onClick={() => setState(state + 1)}>+</button>
         </div>
     )
 }
