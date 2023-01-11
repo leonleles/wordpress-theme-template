@@ -1,6 +1,6 @@
 const Static = () => {
     return (
-        <h1>Static component</h1>
+        <h1>Static component 2</h1>
     )
 }
 
