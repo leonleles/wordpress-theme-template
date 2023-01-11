@@ -21,24 +21,18 @@
     }
   },
   "attributes": {
-    "color": {
-      "type": "string",
-      "default": "blue"
-    },
-    "images": {
+    "items": {
       "type": "array",
-      "source": "query",
-      "selector": "img",
-      "query": {
-        "url": {
-          "type": "string",
-          "source": "attribute",
-          "attribute": "src"
+      "title": {
+        "type": "string"
+      },
+      "image": {
+        "type": "object",
+        "id": {
+          "type": "number"
         },
-        "alt": {
-          "type": "string",
-          "source": "attribute",
-          "attribute": "alt"
+        "url": {
+          "type": "string"
         }
       }
     }

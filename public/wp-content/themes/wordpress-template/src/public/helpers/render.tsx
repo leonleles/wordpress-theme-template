@@ -2,7 +2,7 @@ import {render} from "@wordpress/element";
 import {BrowserRouter} from "react-router-dom";
 
 export const mapRender = (components: any) => {
-        Object
+    Object
         .keys(components)
         .map((name, idx) => {
             // @ts-ignore
@@ -27,17 +27,24 @@ export const mapRender = (components: any) => {
 export function multipleRender(elements: any, Component: any) {
     Object.keys(elements).map((__, i) => {
         const root: HTMLElement = elements[i] as HTMLElement
-        const data = root?.dataset
 
-        const props = data ? data : {}
+        try {
+            if (root) {
+                const {attributes = ''} = root?.dataset
+                const data = JSON.parse(attributes)
+                const props = data ? data : {}
 
-        if (root) {
-            render(
-                <BrowserRouter basename={'/'}>
-                    <Component {...props}/>
-                </BrowserRouter>,
-                root
-            );
+                if (Object.keys(props).length > 0) root.removeAttribute('data-attributes')
+
+                render(
+                    <BrowserRouter basename={'/'}>
+                        <Component {...props}/>
+                    </BrowserRouter>,
+                    root
+                );
+            }
+        } catch (e) {
+            console.log(e)
         }
     })
 }

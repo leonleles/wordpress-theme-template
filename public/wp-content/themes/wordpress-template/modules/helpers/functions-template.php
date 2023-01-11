@@ -27,11 +27,7 @@ function bp_print_svg($file)
 function bp_parse_array($array = [])
 {
     if (empty($array)) return '';
-    $attlist = [];
+    $data = json_encode($array);
 
-    foreach ($array as $name => $value) {
-        $attlist[] = "data-$name='$value'";
-    }
-
-    return implode(' ', $attlist);
+    return "data-attributes='$data'";
 }

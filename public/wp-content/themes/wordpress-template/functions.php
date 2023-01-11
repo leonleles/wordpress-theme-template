@@ -28,3 +28,10 @@ function handler_enqueue_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'handler_enqueue_scripts');
+
+function handler_admin_enqueue_scripts() {
+    wp_register_script('admin-script-js',get_stylesheet_directory_uri() . '/build/admin.js', '1.0.0', true);
+    wp_enqueue_script('admin-script-js');
+}
+
+add_action('admin_enqueue_scripts', 'handler_admin_enqueue_scripts');
